@@ -1,5 +1,3 @@
-# https://github.com/ohmyzsh/ohmyzsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# https://brew.sh/
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# make notification on macos
+# ls /System/Library/Sounds
+osascript -e 'display notification "Init complete" with title "Success" sound name "Ping.aiff"'
