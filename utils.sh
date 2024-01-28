@@ -7,5 +7,3 @@ function notify() {
   local text="$2"
   osascript -e "display notification \"$text\" with title \"$title\" sound name \"Ping.aiff\""
 }
-
-notify "Done" "Setup complete"
