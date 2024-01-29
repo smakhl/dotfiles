@@ -7,7 +7,7 @@ alias glog='git log --stat'
 # alias glo="git log --oneline --decorate"
 # alias glog="git log --oneline --decorate --graph"
 # alias gloga="git log --oneline --decorate --graph --all"
-alias gpush='git push origin $(git_current_branch)'
+alias gpush='git push --set-upstream origin $(git_current_branch)'
 alias gpull='git pull --rebase --autostash -v'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip--"'
 alias gunwip='git rev-list --max-count=1 --format="%s" HEAD | grep -q "--wip--" && git reset HEAD~1'
