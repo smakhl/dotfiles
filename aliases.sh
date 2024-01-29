@@ -13,6 +13,7 @@ alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commi
 alias gunwip='git rev-list --max-count=1 --format="%s" HEAD | grep -q "--wip--" && git reset HEAD~1'
 alias gresetlast="git reset HEAD~"
 alias gbranch="git branch"
+alias gbranchcleanup='LANG=C git branch --no-color -vv | grep ": gone\]" | awk '"'"'{print $1}'"'"' | xargs git branch -d'
 alias gcheckout="git checkout"
 alias gfetch="git fetch --all --prune"
 alias gcount="git shortlog --summary -n"
