@@ -10,7 +10,7 @@ alias glog='git log --stat'
 alias gpush='git push --set-upstream origin $(git_current_branch)'
 alias gpull='git pull --rebase --autostash -v'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip--"'
-alias gunwip='git rev-list --max-count=1 --format="%s" HEAD | grep -q "--wip--" && git reset HEAD~1'
+alias gunwip='git reset HEAD~'
 alias gresetlast="git reset HEAD~"
 alias gbranch="git branch"
 alias gbranchcleanup='LANG=C git branch --no-color -vv | grep ": gone\]" | awk '"'"'{print $1}'"'"' | xargs git branch -d'
