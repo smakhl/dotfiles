@@ -24,5 +24,6 @@ alias gignore="git update-index --skip-worktree"
 alias gunignore="git update-index --no-skip-worktree"
 alias gignorelist="git ls-files -v . | grep ^S"
 alias gfa='git fetch --all --prune'
+alias gs='git status --short'
 
 alias gcloud="~/google-cloud-sdk/bin/gcloud"
