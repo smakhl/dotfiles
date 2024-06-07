@@ -26,4 +26,7 @@ alias gignorelist="git ls-files -v . | grep ^S"
 alias gfa='git fetch --all --prune'
 alias gs='git status --short'
 
+alias goverridesstash="node ~/dotfiles/scripts/stashOverrides.js"
+alias goverridesunstash="node ~/dotfiles/scripts/unStashOverrides.js"
+
 alias gcloud="~/google-cloud-sdk/bin/gcloud"
