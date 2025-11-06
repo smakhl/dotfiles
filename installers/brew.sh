@@ -8,6 +8,7 @@ brew install --cask google-chrome
 brew install --cask brave-browser
 brew install --cask arc
 brew install --cask logi-options-plus
+brew install --cask raycast
 
 # https://github.com/JetBrains/JetBrainsMono
 brew tap homebrew/cask-fonts
@@ -26,6 +27,7 @@ brew install --cask font-jetbrains-mono
 # brew install git-lfs
 # brew install neovim
 # brew install jq
+# brew install fzf
 
 # docker
 # https://github.com/abiosoft/colima

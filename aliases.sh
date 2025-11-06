@@ -15,6 +15,7 @@ alias gresetlast="git reset HEAD~"
 alias gb="git branch"
 alias gbranchcleanup='LANG=C git branch --no-color -vv | grep ": gone\]" | awk '"'"'{print $1}'"'"' | xargs git branch -D'
 alias gco="git checkout"
+alias gci='git checkout $(git branch | fzf)'
 alias gcm="git checkout master"
 alias gcb="git checkout -b"
 alias gf="git fetch --all --prune"
@@ -27,6 +28,6 @@ alias gfa='git fetch --all --prune'
 alias gs='git status --short'
 
 alias goverridesstash="node ~/dotfiles/scripts/stashOverrides.js"
-alias goverridesunstash="node ~/dotfiles/scripts/unStashOverrides.js"
+alias goverridesapply="node ~/dotfiles/scripts/unStashOverrides.js"
 
 alias gcloud="~/google-cloud-sdk/bin/gcloud"
