@@ -3,10 +3,7 @@ alias dotfiles="code ~/dotfiles"
 
 alias g=git
 alias glog='git log --stat'
-alias glog1="git log --oneline --decorate"
-# alias glgg='git log --graph'
-# alias glog="git log --oneline --decorate --graph"
-# alias gloga="git log --oneline --decorate --graph --all"
+alias glo='git log --pretty=format:"%Cgreen(%cr)%Creset [%an] %s"'
 alias gp='git push --set-upstream origin $(git_current_branch)'
 alias gl='git pull --rebase --autostash -v'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip--"'
@@ -15,7 +12,6 @@ alias gresetlast="git reset HEAD~"
 alias gb="git branch"
 alias gbranchcleanup='LANG=C git branch --no-color -vv | grep ": gone\]" | awk '"'"'{print $1}'"'"' | xargs git branch -D'
 alias gco="git checkout"
-alias gci='git checkout $(git branch | fzf)'
 alias gcm="git checkout master"
 alias gcb="git checkout -b"
 alias gf="git fetch --all --prune"
@@ -26,6 +22,15 @@ alias gunignore="git update-index --no-skip-worktree"
 alias gignorelist="git ls-files -v . | grep ^S"
 alias gfa='git fetch --all --prune'
 alias gs='git status --short'
+
+gci() {
+  git checkout $(
+    git branch |
+    sed 's/^..//' |
+    sed 's#^remotes/##' |
+    fzf --preview 'git log --pretty=format:"%Cgreen(%cr)%Creset [%an] %s" -20 {} --'
+  )
+}
 
 alias goverridesstash="node ~/dotfiles/scripts/stashOverrides.js"
 alias goverridesapply="node ~/dotfiles/scripts/unStashOverrides.js"
